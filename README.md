@@ -72,6 +72,11 @@ The first option was very easy to accomplish, as this was largely taken from Lab
 
 The testbench was made for the FSM, which was built according to the schematic shown in the [Detailed Architecture](https://github.com/JohnTerragnoli/ECE383_FinalProject/blob/master/README.md#detailed-architecture) section.  This construction is rudimentary, however, and will likely be changed as more is created within the datapath.  The screenshot of the operational FSM machine can be seen below:  
 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/FSM%20works.PNG "blank grid")
+
+The states change according to the input just as the FSM schematic [above](https://github.com/JohnTerragnoli/ECE383_FinalProject/blob/master/README.md#detailed-architecture) describes.  
+
+
 
 
 **Read Stored Value and Draw on Monitor**
