@@ -61,9 +61,11 @@ When referencing the pixel at row = 125 and column = 11, the index of 15 is used
 NOTE: to achieve these simulation results, the pixel clock had to be replaced with the clk signal in the vga instatiation.  With the pixel clock in place, row and column would always get returned as UUUUUUUUUU.  
 
 
-To see if the indexes could be used to color a specific space blue, the following code was written in the datapath: 
+To see if the indexes could be used to draw on specific spaces, the following code was written in the datapath.  It is supposed to write a blue square at the index (1,1) and a red square at (1,2), where the index is (row,column).  
 
 ```
-whatOn <= "01" when ((rowIndex = "0001") and (colIndex = "0001")) else
-			"00"; 
+whatOn <= 
+	"01" when ((rowIndex = "0001") and (colIndex = "0001")) else
+	"10" when ((rowIndex = "0001") and (colIndex = "0010")) else
+	"00"; 
 ```
