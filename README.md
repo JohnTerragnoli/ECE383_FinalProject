@@ -106,14 +106,58 @@ To see if the indexes could be used to draw on specific spaces, the following co
 
 ```
 whatOn <= 
-	"01" when ((rowIndex = "0001") and (colIndex = "0001")) else
-	"10" when ((rowIndex = "0001") and (colIndex = "0010")) else
-	"00"; 
+	"0001" when ((rowIndex = "0001") and (colIndex = "0001")) else
+	"0010" when ((rowIndex = "0001") and (colIndex = "0010")) else
+	"0000"; 
 ```
 
 The output of this code can be seen below.  It is exactly what was expected.
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/One%20Blue%20One%20Red.JPG "blank referenced when off oscope")
+
+
+Then, this same function was done using BRAM as the LUT.  Values were preloaded into BRAM and fed into the whatOn signal based on the appropriate index of the grid.  The code usd to create a checkered pattern can be seen below: 
+
+```
+sampleMemory: BRAM_SDP_MACRO
+		generic map (
+			BRAM_SIZE => "18Kb", 				-- Target BRAM, "9Kb" or "18Kb"
+			DEVICE => "SPARTAN6", 				-- Target device: "VIRTEX5", "VIRTEX6", "SPARTAN6"
+			DO_REG => 0, 							-- Optional output register disabled
+			INIT => X"000000000000000000",	-- Initial values on output port
+			INIT_FILE => "NONE",					-- Not sure how to initialize the RAM from a file
+			WRITE_WIDTH => 18, 					-- Valid values are 1-36
+			READ_WIDTH => 18, 					-- Valid values are 1-36
+			SIM_COLLISION_CHECK => "NONE",	-- Simulation collision check
+			SRVAL => X"000000000000000000",	-- Set/Reset value for port output
+			
+			INIT_00 => X"0001000200010002000100020001000200010002000100020001000200010002",
+			INIT_01 => X"0002000100020001000200010002000100020001000200010002000100020001",
+			INIT_02 => X"0001000200010002000100020001000200010002000100020001000200010002",
+			INIT_03 => X"0002000100020001000200010002000100020001000200010002000100020001",
+			INIT_04 => X"0001000200010002000100020001000200010002000100020001000200010002",
+			INIT_05 => X"0002000100020001000200010002000100020001000200010002000100020001",
+			INIT_06 => X"0001000200010002000100020001000200010002000100020001000200010002",
+			INIT_07 => X"0002000100020001000200010002000100020001000200010002000100020001")
+			
+			
+		port map (
+			DO => whatOn_18,					-- Output read data port, width defined by READ_WIDTH parameter
+			RDADDR => std_logic_vector(RdAddr),		-- Input address, width defined by port depth
+			RDCLK => clk,	 				-- 1-bit input clock
+			RST => (not reset),				-- active high reset
+			RDEN => '1',					-- read enable 
+			REGCE => '1',					-- 1-bit input read output register enable - ignored
+			DI => X"0000" & std_logic_vector(whoseTurn),	-- Input data port, width defined by WRITE_WIDTH parameter
+			WE => "11",						-- since RAM is byte read, this determines high or low byte
+			WRADDR => std_logic_vector(WrAddr),		-- Input write address, width defined by write port depth
+			WRCLK => clk,		 			-- 1-bit input write clock
+			WREN => '0');				-- 1-bit input write port enable
+
+
+```
+
+
 
 ##Code
 
