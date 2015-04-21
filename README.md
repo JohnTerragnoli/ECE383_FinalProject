@@ -21,24 +21,60 @@ why is this occuring?  Happens whenever an output in a specific module is not de
 
 #Milestone 1
 
-In order to successfully complete milestone 1, the following tasks have to be finished.
+##Detailed Architecture
+
+
+**Level-1** 
+
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/Level_1.png "level 1")
+
+ 
+**Finite State Machine**
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/FSM.png "level 1")
+
+
+**Datapath and Control Unit**
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/Datapath%20and%20Control.png "level 1")
+
+Lengths: The bit lengths of the signals cannot be designated in the schematic above; I could not figure out how to do this with the software I was using.  Additionally, I’m not sure exactly how large I would like the signals to be, so much of the following are generous assumptions.  
+
+-	colIndex  = 10 bits unsigned
+-	rowIndex = 10 bits unsigned
+-	LUTvalue = 2 bits unsigned
+-	whatOn = 2 bits std_logic_vector
+-	row = 10 bits unsigned
+-	column = 10 bits unsigned.  
+-	Cw = 5 bits std_logic_vector
+-	Sw = 3 bits std_logic_vector
+-	Tdms = 3 bits std_logic_vector
+-	Tdmsb = 3 bits std_logic_vector
+-	IR Signal = 1 bit std_logic
+-	Btns = 5 bits std_logic_vector
+
+
+##Unit Test Plan
+
+In order to successfully complete Milestone 1, the following tasks have to be finished.
 
 -	Get the grid to show up 
 -	Create a testbench for the FSM to ensure that it is running and outputting as expected.  
 -	Be able to read appropriate values from the LUT and display them on the screen.  Test this by filling the LUT with predetermined values and seeing if they are displayed as expected.  
 
 
+**Get Grid to Appear**
 
 The first option was very easy to accomplish, as this was largely taken from Lab02 functionality, except the hash marks were removed.  
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/Blank%20Grid.JPG "blank grid")
 
 
+**Begin Finite State Machine (FSM)**
 
-TALK ABOUT FSM TESTBENCH
+The testbench was made for the FSM, which was built according to the picture shown in the "Detailed Architecture" section.  
 
 
 
+**Read Stored Value and Draw on Monitor**
 
 The third objective was slightly more difficult to achieve.  
 
