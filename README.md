@@ -57,3 +57,5 @@ When referencing the pixel at row = 75 and column = 104, the appropriate indexes
 When referencing the pixel at row = 125 and column = 11, the index of 15 is used for each.  15 will be tied to the value 0 in the LUT, which will produce the color black.  This case shows that when either the row or the column or both are off the grid then it will only produce black on the screen.  
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/Index%20Proof%202.PNG "blank referenced when off oscope")
+
+NOTE: to achieve these simulation results, the pixel clock had to be replaced with the clk signal in the vga instatiation.  With the pixel clock in place, row and column would always get returned as UUUUUUUUUU.  
