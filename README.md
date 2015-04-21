@@ -31,4 +31,4 @@ TALK ABOUT FSM TESTBENCH
 
 The third objective was slightly more difficult to achieve.  
 1. First, the correct signals needed to be passed from the scopeface module, where pixels are assigned and drawn, to the datapath to be able to assign them specific colors based on game inputs.  This was done with ease and according to the picture of the datapath created in the plan. 
-2. Next, the logic for determining the row and column indexes of the grid was created.  
+2. Next, the logic for determining the row and column indexes of the grid was created.  A testbench was created to ensure that the correct indexes were being referenced when running through all of the rows and columns
