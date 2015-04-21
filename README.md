@@ -114,3 +114,7 @@ whatOn <=
 The output of this code can be seen below.  It is exactly what was expected.
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/One%20Blue%20One%20Red.JPG "blank referenced when off oscope")
+
+##Code
+
+The code used to complete Milestone 1 can be seen [here](https://github.com/JohnTerragnoli/ECE383_FinalProject/tree/master/Code).  
