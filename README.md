@@ -29,9 +29,9 @@ In order to successfully complete milestone 1, the following tasks have to be fi
 
 
 
-The first option was very easy to accomplish, as this was largely taken from Lab02 functionality.  
+The first option was very easy to accomplish, as this was largely taken from Lab02 functionality, except the hash marks were removed.  
 
-INSERT PICTURE OF GRID SHOWING UP ON SCREEN
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/Index%20Proof%201.PNG "blank grid")
 
 
 
