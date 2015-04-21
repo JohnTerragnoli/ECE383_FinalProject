@@ -48,7 +48,7 @@ The third objective was slightly more difficult to achieve.
 
 A visual representation of what indexes should appear with what pixels is shown below: 
 
-![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/GridMap.JPG "gridMap")
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/GridMap_1.JPG "gridMap")
 
 When referencing the pixel at row = 75 and column = 104, the appropriate indexes of 1 and 1 for the row and column are output.  
 
