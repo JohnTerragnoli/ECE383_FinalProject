@@ -153,11 +153,13 @@ sampleMemory: BRAM_SDP_MACRO
 			WRADDR => std_logic_vector(WrAddr),		-- Input write address, width defined by write port depth
 			WRCLK => clk,		 			-- 1-bit input write clock
 			WREN => '0');				-- 1-bit input write port enable
-
-
 ```
 
 
+This created the desired checkered output on the monitor, as seen in the picture below: 
+
+
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/One%20Blue%20One%20Red.JPG "blank referenced when off oscope")
 
 ##Code
 
