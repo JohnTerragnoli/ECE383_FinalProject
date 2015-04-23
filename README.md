@@ -164,11 +164,13 @@ This created the desired checkered output on the monitor, as seen in the picture
 
 **Selection Marker**
 
-	The selection marker is supposed to be above the column currently being considered.  If the user clicks the choose column button while the marker is above a certain a column, then the game piece will be droped into that column.  The purpose of this section is to get the marker to appear on the screen in yellow above the fifth column and then move left or right based on the button presses on the FPGA board. 
+The selection marker is supposed to be above the column currently being considered.  If the user clicks the choose column button while the marker is above a certain a column, then the game piece will be droped into that column.  The purpose of this section is to get the marker to appear on the screen in yellow above the fifth column and then move left or right based on the button presses on the FPGA board. 
 
-	The button logic created in Lab02 was used for this.  To test that this logic works, a testbench was created to see if the markerColumn signal, the place holder for the where the marker will appear, will respond appropriately to button presses.  A screenshot of the markerColumn working correctly can be seen below: 
+The button logic created in Lab02 was used for this.  To test that this logic works, a testbench was created to see if the markerColumn signal, the place holder for the where the marker will appear, will respond appropriately to button presses.  A screenshot of the markerColumn working correctly can be seen below: 
 	
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/columnMarker_working.PNG "marker working")
+
+Note: 00010 and 01000 represent left and right button presses, respectively.  The 0th column is on the left side and the 9th is on the far right side.  
 
 
 ##Code
