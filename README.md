@@ -202,21 +202,37 @@ Notice that the inputs are in blue and the internal signal is in green.
 
 Also, it is apparent that one up the buttons being pressed is labeled as "enabled."  This was to fix the debouncing issues with the FPGA buttons.  Once a directional button or the select button is chosen, the top button (the enable button) must be hit before a directional button or the select button can be hit again.  This keeps the marker from shooting across the screen or dropping a piece in a column multiple times on accident.  
 
-
+Also, the marker was initialized to appear in the middle of the screen.  
 
 
 
 **Deciding Write Location**
-At first, I thought it would be best to develop a system so that the piece, whatever color it may be, is always written to the correct space.  The easiest way I could imagine this working would be to have a signal dedicated to how "full" each column was.  Then, when the marker is over a specific column, the program would just reference the specific signal keeping track of how full the column is.  How full the column is directly correlates into the row index the program should write to.  Ideally, when the select button is hit then, the program will write the color of whose turn it is to the index currently being referenced from the column fill signals.  
+At first, I thought it would be best to develop a system so that the piece, whatever color it may be, is always written to the correct space.  The easiest way I could imagine this working would be to have a signal dedicated to how "full" each column was.  Then, when the marker is over a specific column, the program would just reference the specific signal keeping track of how full the column is.  How full the column is directly correlates into the row index the program should write to.  Ideally, when the select button is hit then, the program will write the color of whose turn it is to the index currently being referenced from the column fill signals, as well as the column index.  
 
-The testbench below verifies how the "fill" signals can keep track of the appropriate row to write to when that column is selected.  
+The testbench below verifies how the "fill" signals can keep track of the appropriate row to write to when the market is hoving over a specific column.  
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/Filling%20working.PNG "Fills working")
 
 
+Note, that as the same column is chosen multiple times in a row, the chooseRow, or the first half of the writing index, is updated.  This means that the row index of where the program is writing to in the BRAM as the marker moves up and down and as spots are chosen throughout the game.  Because the chooseCol index is changing also, the program is keeping track of the correct spot to write to with respect to the column currently being considered.
 
-Note, that as the same column is chosen multiple times in a row, the chooseRow, or the first half of the writing index, is updated.  This means that the location of where the program is writing to in the BRAM as the marker moves back and forth and as spots are chosen throughout the game.  
+After running this testbench, I generated the .bit file and uploaded it to the FPGA.  For the most part the program worked as expected and blue filled up spaces as desired.  While testing, though, I noticed three issues which needed to be addressed.  When the reset was hit, the screen was not wiped; only the color blue was being written to the screen; once the top rows were filled, they were able to be changed by selecting that column again.  
 
+INSERT SCREEN SHOT OF MONITOR FILLING UP
+
+**Reset Not Working**
+
+I noticed that
+
+**Right Colors**
+MIGHT CONSIDER USING THE FSM to do this later.  WHAT IF YOU FILL ALL THE WAY UP TO THE TOP AND IT SKIPS A TURN????
+
+**Top Rows Changing**
+
+
+
+
+VIDEO OF SPOTS FILLING UP WITH ABOVE ISSUES FIXED. RESET WORKING, FILLS UP TO TOP WITH NO COMPLICATIONS, CHANGE TURNS, 
 
 
 ##Code
