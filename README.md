@@ -174,15 +174,17 @@ Note: 00010 and 01000 represent left and right button presses, respectively.  Th
 
 ##Milestone 2
 
-INCLUDE THE LEVEL 1 DESIGNS AGAIN? MAYBE JUST A LINK TO THEM 
-
 The main purpose of the second milestone was to be able to use the buttons on the FPGA to make boxes appear on the screen.  The specific goals are shown below: 
 
  - To be able to fill up the LUT table by making button presses on the FPGA board.  Assuming Milestone I worked correctly, the LUT should properly display on the screen.  This can just be done by making button presses.  If it seems to not be working well, I will take a step back and create a test bench with simulated button presses to see how the LUT table is filling up.
  - Ensure that the pieces are filled in from the bottom.  Test by selecting a column multiple times in a row.  
  - Two different color pieces.  At first just start with one color and then switch to two.    
 
+Here is the link to the [Level-1 design schematics](https://github.com/JohnTerragnoli/ECE383_FinalProject#detailed-architecture).  These schematics are located earlier in this repository. These schematics were used to actualize the three goals of Milestone 2.  
+
 **Getting the Marker to Move**
+
+The first part of the design was to get the visual marker located above the graph moving in response to the button presses.  
 
 **Deciding Write Location**
 At first, I thought it would be best to develop a system so that the piece, whatever color it may be, is always written to the correct space.  The easiest way I could imagine this working would be to have a signal dedicated to how "full" each column was.  Then, when the marker is over a specific column, the program would just reference the specific signal keeping track of how full the column is.  How full the column is directly correlates into the row index the program should write to.  Ideally, when the select button is hit then, the program will write the color of whose turn it is to the index currently being referenced from the column fill signals.  
@@ -190,6 +192,8 @@ At first, I thought it would be best to develop a system so that the piece, what
 The testbench below verifies how the "fill" signals can keep track of the appropriate row to write to when that column is selected.  
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/Filling%20working.PNG "Fills working")
+
+
 
 Note, that as the same column is chosen multiple times in a row, the chooseRow, or the first half of the writing index, is updated.  This means that the location of where the program is writing to in the BRAM as the marker moves back and forth and as spots are chosen throughout the game.  
 
