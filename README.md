@@ -172,11 +172,17 @@ The button logic created in Lab02 was used for this.  To test that this logic wo
 
 Note: 00010 and 01000 represent left and right button presses, respectively.  The 0th column is on the left side and the 9th is on the far right side.  
 
-##Milestone 2
+
+
+
+
+
+
+#Milestone 2
 
 The main purpose of the second milestone was to be able to use the buttons on the FPGA to make boxes appear on the screen.  The specific goals are shown below: 
 
- - To be able to fill up the LUT table by making button presses on the FPGA board.  Assuming Milestone I worked correctly, the LUT should properly display on the screen.  This can just be done by making button presses.  If it seems to not be working well, I will take a step back and create a test bench with simulated button presses to see how the LUT table is filling up.
+ - To be able to fill up the LUT table by making button presses on the FPGA board.  Assuming Milestone 1 worked correctly, the LUT should properly display on the screen.  This can just be done by making button presses.  If it seems to not be working well, I will take a step back and create a test bench with simulated button presses to see how the LUT table is filling up.
  - Ensure that the pieces are filled in from the bottom.  Test by selecting a column multiple times in a row.  
  - Two different color pieces.  At first just start with one color and then switch to two.    
 
@@ -187,7 +193,7 @@ Here is the link to the [Level-1 design schematics](https://github.com/JohnTerra
 
 **Getting the Marker to Move**
 
-The first part of the design was to get the visual marker located above the graph moving in response to the button presses.  In order to do this, a signal was created which would pass in the column index of the marker from the datapath all the way down to the scopeface module.  Inside the scopeface module, the number of the index was used to draw a yellow box above that specific column.  This was done by converting the column index into a pixel location with a LUT.  The logic for changing the column index of the marker in response to the left and right button were done in the datapath.  Overall, this process was fairly easy.  
+The first part of the design was to get the visual marker located above the graph moving in response to the button presses.  In order to do this, a signal was created which would pass in the column index of the marker from the datapath all the way down to the scopeface module.  Inside the scopeface module, the number of the index was used to draw a yellow box above that specific column.  This was done by converting the column index into a pixel location with a LUT.  The logic for changing the column index of the marker in response to the left and right button were done in the datapath.  Therefore, pressing either th left or the right buttons on the FPGA would change the index, which would change the pixel location on the screen where the marker was drawn, which would make the marker move across the screen.  This entire process was initiated with a testbench.  once the testbench appeared to be working correctly, a .bit file was generated and tested on the FPGA.  
 
 
 
