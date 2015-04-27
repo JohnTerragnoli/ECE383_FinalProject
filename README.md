@@ -182,9 +182,16 @@ The main purpose of the second milestone was to be able to use the buttons on th
 
 Here is the link to the [Level-1 design schematics](https://github.com/JohnTerragnoli/ECE383_FinalProject#detailed-architecture).  These schematics are located earlier in this repository. These schematics were used to actualize the three goals of Milestone 2.  
 
+
+
+
 **Getting the Marker to Move**
 
-The first part of the design was to get the visual marker located above the graph moving in response to the button presses.  
+The first part of the design was to get the visual marker located above the graph moving in response to the button presses.  In order to do this, a signal was created which would pass in the column index of the marker from the datapath all the way down to the scopeface module.  Inside the scopeface module, the number of the index was used to draw a yellow box above that specific column.  This was done by converting the column index into a pixel location with a LUT.  The logic for changing the column index of the marker in response to the left and right button were done in the datapath.  Overall, this process was fairly easy.  
+
+
+
+
 
 **Deciding Write Location**
 At first, I thought it would be best to develop a system so that the piece, whatever color it may be, is always written to the correct space.  The easiest way I could imagine this working would be to have a signal dedicated to how "full" each column was.  Then, when the marker is over a specific column, the program would just reference the specific signal keeping track of how full the column is.  How full the column is directly correlates into the row index the program should write to.  Ideally, when the select button is hit then, the program will write the color of whose turn it is to the index currently being referenced from the column fill signals.  
