@@ -197,6 +197,12 @@ The first part of the design was to get the visual marker located above the grap
 
 
 
+INSERT A SCREENSHOT FOR THE TESTBENCH WORKING PROPERLY
+
+TALK ABOUT DEBOUNCING
+
+
+
 
 
 **Deciding Write Location**
