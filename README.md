@@ -196,10 +196,11 @@ Here is the link to the [Level-1 design schematics](https://github.com/JohnTerra
 The first part of the design was to get the visual marker located above the graph moving in response to the button presses.  In order to do this, a signal was created which would pass in the column index of the marker from the datapath all the way down to the scopeface module.  Inside the scopeface module, the number of the index was used to draw a yellow box above that specific column.  This was done by converting the column index into a pixel location with a LUT.  The logic for changing the column index of the marker in response to the left and right button were done in the datapath.  Therefore, pressing either th left or the right buttons on the FPGA would change the index, which would change the pixel location on the screen where the marker was drawn, which would make the marker move across the screen.  This entire process was initiated with a testbench.  once the testbench appeared to be working correctly, a .bit file was generated and tested on the FPGA.  
 
 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/markerColumn_tb.PNG "markerColumn works correctly")
 
-INSERT A SCREENSHOT FOR THE TESTBENCH WORKING PROPERLY
+Notice that the inputs are in blue and the internal signal is in green.  
 
-TALK ABOUT DEBOUNCING
+Also, it is apparent that one up the buttons being pressed is labeled as "enabled."  This was to fix the debouncing issues with the FPGA buttons.  Once a directional button or the select button is chosen, the top button (the enable button) must be hit before a directional button or the select button can be hit again.  This keeps the marker from shooting across the screen or dropping a piece in a column multiple times on accident.  
 
 
 
