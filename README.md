@@ -174,12 +174,18 @@ Note: 00010 and 01000 represent left and right button presses, respectively.  Th
 
 ##Milestone 2
 
+INCLUDE THE LEVEL 1 DESIGNS AGAIN? MAYBE JUST A LINK TO THEM 
+
 The main purpose of the second milestone was to be able to use the buttons on the FPGA to make boxes appear on the screen.  The specific goals are shown below: 
 
  - To be able to fill up the LUT table by making button presses on the FPGA board.  Assuming Milestone I worked correctly, the LUT should properly display on the screen.  This can just be done by making button presses.  If it seems to not be working well, I will take a step back and create a test bench with simulated button presses to see how the LUT table is filling up.
  - Ensure that the pieces are filled in from the bottom.  Test by selecting a column multiple times in a row.  
  - Two different color pieces.  At first just start with one color and then switch to two.    
 
+**Getting the Marker to Move**
+
+**Deciding Write Location**
+At first, I thought it would be best to develop a system so that the piece, whatever color it may be, is always written to the correct space.  The easiest way I could imagine this working would be to have a signal dedicated to how "full" each column was.  Then, when the marker is over a specific column, the program would just reference the specific signal keeping track of how full the column is.  How full the column is directly correlates into the row index the program should write to.  Ideally, when the select button is hit then, the program will write the color of whose turn it is to the index currently being referenced from the column fill signals.  
 
 
 
