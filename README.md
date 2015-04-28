@@ -222,7 +222,7 @@ INSERT SCREEN SHOT OF MONITOR FILLING UP
 
 **Reset Not Working**
 
-I noticed that
+I noticed that when the reset button was hit, the screen did not become blank.  This was most likely because the BRAM was not being wiped when the reset button was hit.  To fix this issue, I simply created a "for loop" which walks through every address and writes a "00" to it.  
 
 **Right Colors**
 MIGHT CONSIDER USING THE FSM to do this later.  WHAT IF YOU FILL ALL THE WAY UP TO THE TOP AND IT SKIPS A TURN????
