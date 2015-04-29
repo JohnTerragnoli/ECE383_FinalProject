@@ -1,21 +1,6 @@
 # ECE383_FinalProject
 
 
-#Problem History
-1. ERROR:NgdBuild:604 - logical block 'fsm' with type 'Final_fsm_a' could not be
-   resolved. A pin name misspelling can cause this, a missing edif or ngc file,
-   case mismatch between the block name and the edif or ngc file name, or the
-   misspelling of a type name. Symbol 'Final_fsm_a' is not supported in target
-   'spartan6'.
-why is this occuring?  Happens whenever an output in a specific module is not designated in the module.  Like assign output <= "0000" just to have this in the begin statement so you stop getting this error while you're hooking everything up.  
-
-
-
-
-
-
-
-
 
 
 
@@ -216,23 +201,9 @@ The testbench below verifies how the "fill" signals can keep track of the approp
 
 Note, that as the same column is chosen multiple times in a row, the chooseRow, or the first half of the writing index, is updated.  This means that the row index of where the program is writing to in the BRAM as the marker moves up and down and as spots are chosen throughout the game.  Because the chooseCol index is changing also, the program is keeping track of the correct spot to write to with respect to the column currently being considered.
 
-After running this testbench, I generated the .bit file and uploaded it to the FPGA.  For the most part the program worked as expected and blue filled up spaces as desired.  While testing, though, I noticed three issues which needed to be addressed.  When the reset was hit, the screen was not wiped; only the color blue was being written to the screen; once the top rows were filled, they were able to be changed by selecting that column again.  
+After running this testbench, I generated the .bit file and uploaded it to the FPGA.  The LUT loaded and displayed on the screen exactly as expected.  Thus, the functionality for Milestone 2 was achieved.  The video of this occuring can be seen below: 
 
-INSERT SCREEN SHOT OF MONITOR FILLING UP
-
-**Reset Not Working**
-
-I noticed that when the reset button was hit, the screen did not become blank.  This was most likely because the BRAM was not being wiped when the reset button was hit.  To fix this issue, I simply created a "for loop" which walks through every address and writes a "00" to it.  
-
-**Right Colors**
-MIGHT CONSIDER USING THE FSM to do this later.  WHAT IF YOU FILL ALL THE WAY UP TO THE TOP AND IT SKIPS A TURN????
-
-**Top Rows Changing**
-
-
-
-
-VIDEO OF SPOTS FILLING UP WITH ABOVE ISSUES FIXED. RESET WORKING, FILLS UP TO TOP WITH NO COMPLICATIONS, CHANGE TURNS, 
+[Milestone 2 Functionality](https://www.youtube.com/watch?v=dBCBkZQb4JY&feature=youtu.be)
 
 
 ##Code
