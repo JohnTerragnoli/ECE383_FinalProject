@@ -206,6 +206,15 @@ After running this testbench, I generated the .bit file and uploaded it to the F
 [Milestone 2 Functionality](https://www.youtube.com/watch?v=dBCBkZQb4JY&feature=youtu.be)
 
 
+
+##Required Functionality
+
+When I started to go for Required Functionality, I realized there were two errors with the Milestone 2 code.  These errors are shown below: 
+
+1. BRAM is not wiped when reset is hit, meaning that old pieces are still on the screen after a reset
+2. the top piece can be changed different colors when the row is completely full if that column is selected again.  
+
+
 ##Code
 
 The code used to complete Milestone 1 can be seen [here](https://github.com/JohnTerragnoli/ECE383_FinalProject/tree/master/Code).  
