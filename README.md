@@ -215,6 +215,15 @@ When I started to go for Required Functionality, I realized there were two error
 2. the top piece can be changed different colors when the row is completely full if that column is selected again.  
 
 
+**BRAM not Wiped**
+This is not the most essential issue with the game.  The rest of the game is not actually affected if the reset is never hit.  This issue will be addressed last.  
+
+
+**Stabilize Top Piece**
+Fixing this issue was easy.  When the row of the column was above a certain point, the ability to change colors was restricted.  However, this gave rise to another issue.  When the same column was selected, even though it was full, the color in that column wouldn't change, however, if the player moved left of right, it could change the color of the top piece in other columns to be the same as the color of the last piece in the full column.  To fix this secondary issue, I dediced to recheck my write enable signal for the BRAM.  If it is only enabled when the select button is hit this should fix the issue.  
+When I checked the enable signal, it turns out that it was tied to always be high.  Realizing this, I simply created a finalizing signal, which would only be high if a viable move was actually made.  
+
+
 ##Code
 
 The code used to complete Milestone 1 can be seen [here](https://github.com/JohnTerragnoli/ECE383_FinalProject/tree/master/Code).  
