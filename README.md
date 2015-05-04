@@ -241,7 +241,9 @@ USED A PRELOADED BRAM WITH ALL BLUE, BUT NOTHING IN THE LUT WHICH IS NOT SHOWN O
 
 TESTBENCH PROVING THIS CAN OCCUR IS SHOWN BELOW:::::
 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/Basic%20Check%20Top.PNG "Testbench Basic Check")
 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/Basic%20Check%20Bottom.PNG "Testbench Basic Check2")
 
 
 
