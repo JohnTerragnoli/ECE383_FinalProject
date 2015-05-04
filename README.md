@@ -223,6 +223,22 @@ This is not the most essential issue with the game.  The rest of the game is not
 Fixing this issue was easy.  When the row of the column was above a certain point, the ability to change colors was restricted.  However, this gave rise to another issue.  When the same column was selected, even though it was full, the color in that column wouldn't change, however, if the player moved left of right, it could change the color of the top piece in other columns to be the same as the color of the last piece in the full column.  To fix this secondary issue, I dediced to recheck my write enable signal for the BRAM.  If it is only enabled when the select button is hit this should fix the issue.  
 When I checked the enable signal, it turns out that it was tied to always be high.  Realizing this, I simply created a finalizing signal, which would only be high if a viable move was actually made.  
 
+HAD TO CHANGE THE FSM
+
+
+
+##Steps to Required Functionality
+
+
+###Identical BRAM for a Win Check
+CREATED A SECOND BRAM FOR CHECKING IF A WIN HAS OCCURED. WANT THIS LOGIC TO HAPPEN IN ANOTHER MODULE BECAUSE THE CODE FOR IT IS LONG
+
+MAKE SURE CAN READ AND WRITE FROM THE BRAM
+
+DID THIS BY USING THE SAME WRITE SIGNALS, AND READING IN A SIMLAR FASHION
+
+TESTBENCH PROVING THIS CAN OCCUR IS SHOWN BELOW:::::
+
 
 ##Code
 
