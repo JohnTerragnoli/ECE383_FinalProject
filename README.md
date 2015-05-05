@@ -247,6 +247,25 @@ TESTBENCH PROVING THIS CAN OCCUR IS SHOWN BELOW:::::
 
 
 
+
+#B Functionality 
+
+First, the IR signals from the remotes needed to be decoded.  
+
+Screenshots from the remote can be seen below: 
+
+REMOTE SCREENSHOTS. 
+
+
+##ANALIZE THE SIGNAL
+
+NOTICE THERE IS A INDEFINTE HIGH, TWO STARTING PARTS, AND 
+
+
+
+
+
+
 ##Code
 
 The code used to complete Milestone 1 can be seen [here](https://github.com/JohnTerragnoli/ECE383_FinalProject/tree/master/Code).  
