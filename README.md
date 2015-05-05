@@ -308,6 +308,9 @@ Also, it is clear that the ranges for the Low Spacer and the Short High overlap 
 In short, these times, along with rising and falling edges, will be used to navigate a mini fsm in another module.  
 
 
+Manually Decode the Signal 
+
+
 ##Code
 
 The code used to complete Milestone 1 can be seen [here](https://github.com/JohnTerragnoli/ECE383_FinalProject/tree/master/Code).  
