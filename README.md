@@ -273,9 +273,11 @@ The last three parts of the signal all occur for specific lengths of time.  Ther
 The period of the clock used is 10 ns.  By counting how many clock cycles have passed it is possible to know just how long has passed.  Whenever an edge occurs, the number of clock cycles which have passed can be recorded, and thus periods of time that the signal is either high or low can be recorded.  
 
 
-**Finding Times**
+###Finding Times
 
 The logic analyzer was used to determine the average length each essential part of the signal.  # SAMPLES OF DATA WERE TAKEN; THE VITAL AVERAGES CAN BE SEEN BELOW: 
+
+**Times in Seconds**
 
 |                |                     | Start Low | Start High | Low Spacer | Short High | Long High |
 |----------------|---------------------|-----------|------------|------------|------------|-----------|
@@ -285,7 +287,20 @@ The logic analyzer was used to determine the average length each essential part 
 |                | 5 std_dev above =   | 9006465   | 4533138    | 657648.356 | 692017.18  | 1776557   |
 |                | 5 std_dev below =   | 8913015   | 4450302    | 521839.644 | 368150.82  | 1452163   |
 
-Based on the length of these signals, it is possible to determine what has just happened in the input signal.  It is clear that the ranges for the Low Spacer and the Short High overlap significanly.  Therefore, time cannot be used to determine what is going on.  However, whenever there is a short high, there is a rising and falling edge.  These edges can be used to go from state to state to decode the signal.  
+
+**Times in Clock Periods**
+
+|                   |                     | Start Low | Start High | Low Spacer | Short High | Long High |
+|-------------------|---------------------|-----------|------------|------------|------------|-----------|
+| clk period = 10ns | averages =          | 895974    | 449172     | 58974.4    | 53008.4    | 161436    |
+|                   | std_dev =           | 934.4967  | 828.3574   | 1358.08713 | 3238.6635  | 3243.933  |
+|                   |                     |           |            |            |            |           |
+|                   | 5 std_dev above =   | 900647    | 453314     | 65765      | 69202      | 177656    |
+|                   | 5 std_dev below =   | 891301    | 445030     | 52183      | 36815      | 145216    |
+
+Based on the length of these signals, it is possible to determine what has just happened in the input signal.  After an edge occurs it will be possible to count the number of clock cycles that pass and then check if it occurs between the low and the high marks.  
+
+Also, it is clear that the ranges for the Low Spacer and the Short High overlap significanly.  Therefore, time cannot be used to determine what is going on.  However, whenever there is a short high, there is a rising and falling edge.  These edges can be used to go from state to state to decode the signal.  
 
 In short, these times, along with rising and falling edges, will be used to navigate a mini fsm in another module.  
 
