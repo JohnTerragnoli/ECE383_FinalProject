@@ -308,8 +308,20 @@ Also, it is clear that the ranges for the Low Spacer and the Short High overlap 
 In short, these times, along with rising and falling edges, will be used to navigate a mini fsm in another module.  
 
 
-Manually Decode the Signal 
+**Manually Decode the Signal**
 
+This was done just by examining the datapack for the short and long high values.  A table of the combiled results can be seen below: 
+
+|        | Binary                           | Hex      |
+|--------|----------------------------------|----------|
+| Left   | 00100000110111111100000000111111 | 20DFC03F |
+| Center | 00100000110111111001000001101111 | 20DF906F |
+| Right  | 00100000110111110100000010111111 | 20DF40BF |
+
+
+Therefore, if the signal can be decoded correctly according to the edges and the time lengths, then the decoded signal can be compared to the above table to determine which button was actually hit.  
+
+Once this is done, then these results can simply replace the button logic from Basic Functionality and the game should still be played as designed, then just with a remote.  
 
 ##Code
 
