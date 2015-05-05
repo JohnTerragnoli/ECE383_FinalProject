@@ -333,6 +333,10 @@ HOW CODE WORKS
 SCREENSHOT OF STATES FOLLOWING IR SIGNAL
 
 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/IR_decode_counts_states.PNG "Decode Counts states")
+
+
+
 ##Code
 
 The code used to complete Milestone 1 can be seen [here](https://github.com/JohnTerragnoli/ECE383_FinalProject/tree/master/Code).  
