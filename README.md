@@ -287,6 +287,7 @@ The logic analyzer was used to determine the average length each essential part 
 |                | 5 std_dev above =   | 9006465   | 4533138    | 657648.356 | 692017.18  | 1776557   |
 |                | 5 std_dev below =   | 8913015   | 4450302    | 521839.644 | 368150.82  | 1452163   |
 
+*Note: 5 Standard Deviations above and below the average was chosen because it includes [99.9999426697%](http://en.wikipedia.org/wiki/Standard_deviation) of all values according to chance.  This decreases the change of measuring and thus interpreting a part of the signal wrong.  
 
 **Times in Clock Periods**
 
@@ -297,6 +298,8 @@ The logic analyzer was used to determine the average length each essential part 
 |                   |                     |           |            |            |            |           |
 |                   | 5 std_dev above =   | 900647    | 453314     | 65765      | 69202      | 177656    |
 |                   | 5 std_dev below =   | 891301    | 445030     | 52183      | 36815      | 145216    |
+
+
 
 Based on the length of these signals, it is possible to determine what has just happened in the input signal.  After an edge occurs it will be possible to count the number of clock cycles that pass and then check if it occurs between the low and the high marks.  
 
