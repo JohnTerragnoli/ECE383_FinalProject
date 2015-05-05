@@ -245,6 +245,18 @@ TESTBENCH PROVING THIS CAN OCCUR IS SHOWN BELOW:::::
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/Basic%20Check%20Bottom.PNG "Testbench Basic Check2")
 
+After this was working, a bit file was generated to check out if it could be implemented properly.  The program did not perform as expected, however.  More testbench scenarios were run to investigate.  
+
+Below are the testbench cases used.  
+
+**Nothing filled in the BRAM**
+Neither player won, which is great. 
+
+
+**One Column Filled up with One Color**
+
+
+
 
 
 
