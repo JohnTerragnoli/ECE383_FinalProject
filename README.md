@@ -335,6 +335,8 @@ SCREENSHOT OF STATES FOLLOWING IR SIGNAL
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/IR_decode_counts_states.PNG "Decode Counts states")
 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE383_FinalProject/master/Pictures/IR_decode_counts_states_2.PNG "Decode Counts states _2")
+
 
 
 ##Code
