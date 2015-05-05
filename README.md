@@ -323,6 +323,16 @@ Therefore, if the signal can be decoded correctly according to the edges and the
 
 Once this is done, then these results can simply replace the button logic from Basic Functionality and the game should still be played as designed, then just with a remote.  
 
+
+
+
+**FSM for Decoding**
+
+HOW CODE WORKS
+
+SCREENSHOT OF STATES FOLLOWING IR SIGNAL
+
+
 ##Code
 
 The code used to complete Milestone 1 can be seen [here](https://github.com/JohnTerragnoli/ECE383_FinalProject/tree/master/Code).  
