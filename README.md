@@ -250,20 +250,44 @@ TESTBENCH PROVING THIS CAN OCCUR IS SHOWN BELOW:::::
 
 #B Functionality 
 
-First, the IR signals from the remotes needed to be decoded.  
-
-Screenshots from the remote can be seen below: 
-
-REMOTE SCREENSHOTS. 
-
-
 ##ANALIZE THE SIGNAL
 
-NOTICE THERE IS A INDEFINTE HIGH, TWO STARTING PARTS, AND 
 
 
+**Parts of the Signal**
+After wiring the IR sensor to a logic analyzer, there appears to be four main parts of the signal
+
+- The long high at the beginning.  The signal remains high when a button is pressed until the packet of information is sent
+- The low following the long high
+- short low
+- packet of information
+
+INSERT PICTURE OF SIGNAL SCREENSHOTS, FOR LEFT, CENTER, AND RIGHT. 
+
+As for the packet of information, there are short highs and long highs, which correspond to 0s and 1s respectively.   
+
+The last three parts of the signal all occur for specific lengths of time.  Therefore, by timing how long the signal is either high or low, as appropriate, we can decipher the signal.  
+
+**Units for Counting**
+
+The period of the clock used is 10 ns.  By counting how many clock cycles have passed it is possible to know just how long has passed.  Whenever an edge occurs, the number of clock cycles which have passed can be recorded, and thus periods of time that the signal is either high or low can be recorded.  
 
 
+**Finding Times**
+
+The logic analyzer was used to determine the average length each essential part of the signal.  # SAMPLES OF DATA WERE TAKEN; THE VITAL AVERAGES CAN BE SEEN BELOW: 
+
+|                |                     | Start Low | Start High | Low Spacer | Short High | Long High |
+|----------------|---------------------|-----------|------------|------------|------------|-----------|
+| (nano seconds) | averages =          | 8959740   | 4491720    | 589744     | 530084     | 1614360   |
+|                | std_dev =           | 9344.967  | 8283.574   | 13580.8713 | 32386.635  | 32439.33  |
+|                |                     |           |            |            |            |           |
+|                | 5 std_dev above =   | 9006465   | 4533138    | 657648.356 | 692017.18  | 1776557   |
+|                | 5 std_dev below =   | 8913015   | 4450302    | 521839.644 | 368150.82  | 1452163   |
+
+Based on the length of these signals, it is possible to determine what has just happened in the input signal.  It is clear that the ranges for the Low Spacer and the Short High overlap significanly.  Therefore, time cannot be used to determine what is going on.  However, whenever there is a short high, there is a rising and falling edge.  These edges can be used to go from state to state to decode the signal.  
+
+In short, these times, along with rising and falling edges, will be used to navigate a mini fsm in another module.  
 
 
 ##Code
